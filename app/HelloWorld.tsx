@@ -14,14 +14,7 @@ const CSS = {
 
 @subclass("esri.widgets.HelloWorld")
 class HelloWorld extends declared(Widget) {
-
-  //--------------------------------------------------------------------------
-  //
-  //  Properties
-  //
-  //--------------------------------------------------------------------------
-
-  //----------------------------------
+//----------------------------------
   //  firstName
   //----------------------------------
 
@@ -45,38 +38,27 @@ class HelloWorld extends declared(Widget) {
   @renderable()
   emphasized: boolean = false;
 
-  //--------------------------------------------------------------------------
-  //
-  //  Public Methods
-  //
-  //--------------------------------------------------------------------------
+  // Public method
+render() {
+  const greeting = this._getGreeting();
+  const classes = {
+    [CSS.emphasis]: this.emphasized
+  };
 
+  return (
+    <div bind={this}
+         class={CSS.base}
+         classes={classes}>
+    {greeting}
+    </div>
+  );
+}
 
-  render() {
-    const greeting = this._getGreeting();
-    const classes = {
-      [CSS.emphasis]: this.emphasized
-    };
-
-    return (
-      <div bind={this}
-           class={CSS.base}
-           classes={classes}>
-      {greeting}
-      </div>
-    );
-  }
-
-  //--------------------------------------------------------------------------
-  //
-  //  Private Methods
-  //
-  //--------------------------------------------------------------------------
-
-  private _getGreeting(): string {
-    return `Hello, my name is ${this.firstName} ${this.lastName}!`;
-  }
-
+// Private method
+private _getGreeting(): string {
+  return `Hello, my name is ${this.firstName} ${this.lastName}!`;
+}
 }
 
 export = HelloWorld;
+
