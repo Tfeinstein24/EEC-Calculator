@@ -1,0 +1,53 @@
+<div>
+    <div>Installation Type</div>
+    <select name="select1" data-dojo-type="dijit/form/Select">
+    <option value="TN">Jack-up</option>
+    <option value="VA" selected="selected">Semi-sub</option>
+    <option value="WA">MODU</option>
+    <option value="FL">Crewboat</option>
+    <option value="CA">Helicopter</option>
+</select>
+  <br><br>
+    <div>Select Layer</div>
+    <select id="dataLayers" name="select1" data-dojo-type="dijit/form/Select">
+    <option value="TN">Layer1</option>
+    <option value="VA" selected="selected">Layer2</option>
+    <option value="WA">Layer3</option>
+    <option value="FL">Layer4</option>
+    <option value="CA">Layer5</option>
+</select>
+  <br><br>
+  <label for="value0Box">Describe Emergency:</label>
+  <input id="value0Box" data-dojo-type="dijit/form/TextBox" data-dojo-props="intermediateChanges:true"></input>
+<br><br>
+<div data-dojo-type="dijit/form/DropDownButton">
+  <div data-dojo-type="dijit/TooltipDialog">
+     <label for="name">Installation Name:</label> <input data-dojo-type="dijit/form/TextBox" id="name" name="name"><br><br>
+     <label for="hobby">PIC:</label> <input data-dojo-type="dijit/form/TextBox" id="hobby" name="hobby"><br><br>
+     <label for="hobby">Well-Status:</label> <input data-dojo-type="dijit/form/TextBox" id="hobby" name="hobby"><br><br>
+     <button data-dojo-type="dijit/form/Button" type="submit">Submit</button>
+     <br><br>
+     <div>Show Nearby Vessels</div>
+     <form id="myform">
+    <input type="radio" name="drink" id="radioOne" checked value="tea"/> <label for="radioOne">Rigs</label> <br />
+    <input type="radio" data-dojo-type="dijit/form/RadioButton" name="drink" id="radioTwo" value="coffee"/> <label for="radioTwo">Coast Guard</label> <br />
+    <input type="radio" data-dojo-type="dijit/form/RadioButton" name="drink" id="radioTwo" value="coffee"/> <label for="radioTwo">Crew Boats</label> <br />
+    <button data-dojo-type="dijit/form/Button" type="button">
+        Show form submit value
+        <script type="dojo/on" data-dojo-event="click">
+            require(["dojo/dom"], function(dom){
+                 with(dom.byId('myform'))with(elements[0])with(elements[checked?0:1])alert(name+'='+value);
+                 return false;
+            });
+        </script>
+    </button>
+</form>
+     <br><br>
+     <button data-dojo-type="dijit/form/Button" type="submit">Perform Analysis</button>
+  </div>
+</div>
+    <!-- <div id="layerListDiv"></div>
+    <button data-dojo-attach-event="click:toggleLayer">
+        Toggle Layer Visability
+    </button> -->
+</div>
